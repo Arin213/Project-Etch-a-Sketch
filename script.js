@@ -1,15 +1,29 @@
 // 1. first select the body and the exisitng div 
 const body = document.querySelector("body");
 
+
+// acess the body div and style it 
+const bodyDiv = document.querySelector("#body")
+bodyDiv.style.cssText = `
+    border-radius: 5px
+`
 const inputForm = document.createElement("form");
 inputForm.innerHTML = `
         <label for="number"> Enter a number</label>
         <input type="number" id="number" name="number" min="1" max="100" required>
-        <input type="submit" id="submit" name="submit">
+        <input type="submit" id="submit" name="submit" value="Enter">
 `
-// append the form to the body 
-body.prepend(inputForm);
+// style to the form
+inputForm.style.cssText = `
+margin: 20px;
 
+`;
+// append the form to the body 
+bodyDiv.prepend(inputForm);
+// add heading to the body 
+const heading = document.createElement("h1");
+heading.textContent = "Etch-a-Sketch";
+body.prepend(heading);
 
 // 2. create the form element with input type number and next one with submit type 
 const container = document.querySelector("#grid-container");
@@ -23,7 +37,8 @@ if (container) {
     width: 960px;
     height: 960px;
     align-content: stretch;
-    border-radius: 5px;`);
+    border-radius: 5px;
+    margin: 20px;`);
 
 }
 
@@ -100,9 +115,17 @@ if (typeof inputForm !== "undefined") {
 
 }
 
+//create a random color
+let rgbRandom = () => {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255); 
+    const rgb = `rgb(${r}, ${g}, ${b})`;
+    return rgb;
+};
 // event delegation
     container.addEventListener("mouseover", (e) => {
         if(e.target.classList.contains("item")){
-            e.target.style.backgroundColor = "black";  
+            e.target.style.backgroundColor = rgbRandom();  
         }
     });

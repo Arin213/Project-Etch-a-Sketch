@@ -1,5 +1,23 @@
-body {
+#body {
     display: flex;
     justify-content: space-around;
     background-color: #fee715;
+}
+
+h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;   
+    border: 1px solid #07553B; 
+    background-color: #CED46A;
+    border-radius: 5px;
+}
+
+#submit {
+    border: 1px solid #07553B;
+    border-radius: 4px;
+    font-size: large;
 }

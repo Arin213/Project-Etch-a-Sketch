@@ -65,11 +65,16 @@ the color of the box is set to black
 
 ### ***work flow of mouseover event listener:***
 
+- create a arrow function `rgbRandom()` where i take `const r, const g, const b` and take the random value for each using 
+`Math.floor(Math.random() * 255)` and finally return the all three random rgbs using 
+`const rgb = rgb(${r}, ${g}, ${b});
+return rgb;
+`
 - once `grid-container` filled with the `child div` as per given number of child div to be made, add the event listener of `mouseover` directly to the `grid-container` 
 
 - passing condition to the event listener,
 if the `e.target.classList.containes("item)` which means if the `child div` with the class name `item` then,
-`e.target.styl.backgroundColor = "black";` which means change the background of each `child div` to `black`.
+`e.target.styl.backgroundColor = "rgbRandom();` which means change the background of each `child div` to ***random color***.
 
 - **NOTE**: for each loop hasn't used instead use of `event delegation.` instead of running every loop and attaching them a event listner, attached one listner to parent`container`.
 
